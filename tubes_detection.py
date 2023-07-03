@@ -584,7 +584,7 @@ class Ui_MainWindow(object):
                 thresh = 200
                 bwimage = cv2.threshold(scaleimage, thresh, 255, cv2.THRESH_BINARY)[1]
                 cv2.imwrite(f'scale/scale/crops/polosochka/{filename}', bwimage)
-                pytesseract.pytesseract.tesseract_cmd = 'main'
+                pytesseract.pytesseract.tesseract_cmd = "C:/Program Files/Tesseract-OCR/tesseract.exe"
                 resultDict[filename] = pytesseract.image_to_string(bwimage)
             return resultDict
         else:
@@ -634,7 +634,7 @@ class Ui_MainWindow(object):
         shutil.rmtree('inside', True)
         shutil.rmtree('outside', True)
         shutil.rmtree('scale', True)
-        input_images = filedialog.askopenfilenames(initialdir="C:\у\files",
+        input_images = filedialog.askopenfilenames(initialdir="C:\\files",
                                                    title="Select an Images",
                                                    filetypes=[
                                                        ('Image file', '.png .jpg .jpeg'),
